@@ -1,1 +1,1 @@
-This is a test
+XMAS (not so) secret santa list distribution. Create family members and manually set exclusions (ie wife and husband shouldn't get eachother) in main.py
