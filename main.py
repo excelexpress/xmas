@@ -39,13 +39,16 @@ for member in family:
 
 print()
 print("Results are:")
-for member in family:
-	member.drawName()
-	print(f"  {member.name} has {member.assignedperson.name}")
-	
-	#remove drawn member from each family member's eligible people list after picking
+for indx in range(0, len(family)):
+	#sort after each drawing. This ensures all drawings are successful 
+	#(ie not running out of eligible names)
+	family.sort(key=lambda t: len(t.eligible_people))
+	print()
+	family[0].drawName()
+	print(f"{family[0].name} has {family[0].assignedperson.name}")
 	for fam_member in family:
-		fam_member.removePerson(member.assignedperson)
+		fam_member.removePerson(family[0].assignedperson)
+	del family[0]
 
 
 
